@@ -1,0 +1,132 @@
+/* Dashboard.css */
+
+.dashboard-page {
+  padding: 30px;
+  background: #f5f7fb;
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+}
+
+.dashboard-page h3 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 25px;
+}
+
+/* GRID CARD */
+.dashboard-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 22px;
+}
+
+/* CARD */
+.dashboard-card {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 22px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+  transition: 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 35px rgba(0, 0, 0, 0.12);
+}
+
+/* ICON */
+.dashboard-card-icon {
+  width: 70px;
+  height: 70px;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  color: white;
+  flex-shrink: 0;
+}
+
+/* INFO */
+.dashboard-card-info p {
+  margin: 0;
+  font-size: 15px;
+  color: #777;
+  font-weight: 500;
+}
+
+.dashboard-card-info h4 {
+  margin-top: 8px;
+  font-size: 24px;
+  color: #222;
+  font-weight: 700;
+}
+
+/* COLORS */
+.dashboard-card.blue .dashboard-card-icon {
+  background: linear-gradient(135deg, #3498db, #1d6fa5);
+}
+
+.dashboard-card.green .dashboard-card-icon {
+  background: linear-gradient(135deg, #2ecc71, #1f9f56);
+}
+
+.dashboard-card.purple .dashboard-card-icon {
+  background: linear-gradient(135deg, #9b59b6, #6c3483);
+}
+
+/* BORDER TOP */
+.dashboard-card.blue::before,
+.dashboard-card.green::before,
+.dashboard-card.purple::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 5px;
+  width: 100%;
+}
+
+.dashboard-card.blue::before {
+  background: #3498db;
+}
+
+.dashboard-card.green::before {
+  background: #2ecc71;
+}
+
+.dashboard-card.purple::before {
+  background: #9b59b6;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .dashboard-page {
+    padding: 20px;
+  }
+
+  .dashboard-page h3 {
+    font-size: 22px;
+  }
+
+  .dashboard-card {
+    padding: 18px;
+  }
+
+  .dashboard-card-icon {
+    width: 58px;
+    height: 58px;
+    font-size: 24px;
+  }
+
+  .dashboard-card-info h4 {
+    font-size: 20px;
+  }
+}

@@ -1,0 +1,144 @@
+/* ===== HALAMAN KURSUS ===== */
+.kursus-page {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background: #f8f9fa;
+  min-height: 100vh;
+}
+
+/* HEADER */
+.kategori-header h3 {
+  margin: 0;
+  font-size: 24px;
+  color: #333;
+}
+
+.btn-add {
+  background: #007bff;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+
+.btn-add:hover {
+  background: #0056b3;
+}
+
+/* TABLE WRAPPER */
+.table-wrapper {
+  background: white;
+  border-radius: 12px;
+  overflow-x: auto;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+/* TABLE */
+.kursus-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 800px;
+}
+
+.kursus-table thead {
+  background: #007bff;
+  color: white;
+}
+
+.kursus-table th,
+.kursus-table td {
+  padding: 14px 16px;
+  text-align: left;
+}
+
+.kursus-table tbody tr {
+  border-bottom: 1px solid #eee;
+  transition: 0.2s;
+}
+
+.kursus-table tbody tr:hover {
+  background: #f1f7ff;
+}
+
+.kursus-table tbody tr:nth-child(even) {
+  background: #fafafa;
+}
+
+/* BUTTON AKSI */
+.kursus-table button {
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+/* EDIT */
+.kursus-table button:first-child {
+  background: #28a745;
+  color: white;
+}
+
+.kursus-table button:first-child:hover {
+  background: #218838;
+}
+
+/* DELETE */
+.kursus-table button:last-child {
+  background: #dc3545;
+  color: white !important;
+}
+
+.kursus-table button:last-child:hover {
+  background: #c82333;
+}
+
+/* PAGINATION */
+.pagination {
+  margin-top: 20px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.pagination button {
+  padding: 8px 14px;
+  border: 1px solid #ddd;
+  background: white;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.pagination button:hover:not(:disabled) {
+  background: #007bff;
+  color: white;
+}
+
+.pagination button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .kategori-header {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start !important;
+  }
+
+  .btn-add {
+    width: 100%;
+    text-align: center;
+  }
+
+  .kursus-table th,
+  .kursus-table td {
+    padding: 10px;
+    font-size: 14px;
+  }
+}

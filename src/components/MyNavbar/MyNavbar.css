@@ -1,0 +1,244 @@
+/* Import Font */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+/* Smooth Global */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  background: #f8fafc;
+}
+
+/* Animasi pindah halaman / render */
+@keyframes fadeSlidePage {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+    filter: blur(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+/* Bungkus halaman utama */
+.page-content,
+.main-content,
+.dashboard-content {
+  animation: fadeSlidePage 0.55s ease;
+}
+
+/* Navbar */
+.navbar {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 10px 30px rgba(37, 99, 235, 0.08);
+  border-radius: 22px;
+  padding: 16px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 28px;
+  transition: all 0.35s ease;
+}
+
+/* Hover navbar */
+.navbar:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 35px rgba(37, 99, 235, 0.10);
+}
+
+/* Kiri */
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+/* Logo */
+.logo {
+  font-size: 28px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #38bdf8, #2563eb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Link Menu */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #475569;
+  font-size: 15px;
+  font-weight: 500;
+  transition: all 0.35s ease;
+  position: relative;
+}
+
+/* Hover lebih smooth */
+.nav-links a:hover {
+  color: #2563eb;
+  transform: translateY(-2px);
+}
+
+/* Active */
+.nav-links a.active {
+  color: #2563eb;
+  font-weight: 700;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -8px;
+  width: 0%;
+  height: 3px;
+  background: linear-gradient(135deg, #38bdf8, #2563eb);
+  border-radius: 10px;
+  transition: all 0.35s ease;
+  transform: translateX(-50%);
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  width: 100%;
+}
+
+/* Search */
+.nav-search {
+  flex: 1;
+  max-width: 420px;
+  background: #eff6ff;
+  border: 2px solid transparent;
+  border-radius: 16px;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.35s ease;
+}
+
+.nav-search:focus-within {
+  border-color: #38bdf8;
+  background: white;
+  box-shadow: 0 0 0 5px rgba(56, 189, 248, 0.15);
+  transform: scale(1.01);
+}
+
+.search-icon {
+  color: #2563eb;
+  font-size: 16px;
+}
+
+.nav-search input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 14px;
+  color: #334155;
+}
+
+/* Kanan */
+.nav-right {
+  display: flex;
+  align-items: center;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.user svg {
+  font-size: 34px;
+  color: #2563eb;
+  transition: 0.3s ease;
+}
+
+.user:hover svg {
+  transform: rotate(8deg) scale(1.05);
+}
+
+.user span {
+  font-size: 15px;
+  font-weight: 600;
+  color: #1e3a8a;
+}
+
+/* Logout */
+.logout {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #38bdf8, #2563eb);
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.35s ease;
+}
+
+.logout:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 10px 20px rgba(37, 99, 235, 0.18);
+}
+
+/* Responsive Tablet */
+@media (max-width: 992px) {
+  .navbar {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 18px;
+  }
+
+  .nav-left {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .nav-search {
+    order: 3;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .nav-right {
+    margin-left: auto;
+  }
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+  .nav-links {
+    display: none;
+  }
+
+  .logo {
+    font-size: 24px;
+  }
+
+  .user span {
+    display: none;
+  }
+
+  .logout {
+    padding: 9px 14px;
+    font-size: 13px;
+  }
+}

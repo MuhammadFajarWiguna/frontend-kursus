@@ -1,0 +1,178 @@
+/* Import font */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Halaman utama */
+.login-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #38bdf8, #0ea5e9, #2563eb);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Card login */
+.login-card {
+  width: 920px;
+  max-width: 100%;
+  min-height: 550px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 24px;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(12px);
+}
+
+/* Bagian kiri */
+.login-logo {
+  background: linear-gradient(160deg, #0ea5e9, #2563eb);
+  color: white;
+  padding: 60px 45px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+.login-logo::before,
+.login-logo::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.login-logo::before {
+  width: 180px;
+  height: 180px;
+  top: -40px;
+  right: -50px;
+}
+
+.login-logo::after {
+  width: 130px;
+  height: 130px;
+  bottom: 20px;
+  left: -40px;
+}
+
+.login-logo h2 {
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 14px;
+  z-index: 2;
+}
+
+.login-logo p {
+  font-size: 18px;
+  opacity: 0.95;
+  z-index: 2;
+}
+
+/* Bagian kanan */
+.login-form {
+  padding: 55px 45px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.login-form h3 {
+  font-size: 32px;
+  color: #1e3a8a;
+  text-align: center;
+  margin-bottom: 30px;
+  font-weight: 700;
+}
+
+/* Input */
+.login-field {
+  margin-bottom: 22px;
+}
+
+.login-field label {
+  display: block;
+  margin-bottom: 8px;
+  color: #2563eb;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.login-field input {
+  width: 100%;
+  padding: 14px 16px;
+  border: 2px solid #dbeafe;
+  border-radius: 12px;
+  font-size: 15px;
+  outline: none;
+  transition: 0.3s ease;
+}
+
+.login-field input:focus {
+  border-color: #38bdf8;
+  box-shadow: 0 0 0 5px rgba(56, 189, 248, 0.18);
+}
+
+/* Tombol */
+.btn-login {
+  margin-top: 10px;
+  padding: 14px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #38bdf8, #2563eb);
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.btn-login:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 24px rgba(37, 99, 235, 0.25);
+}
+
+/* Text bawah */
+.login-form span {
+  margin-top: 22px;
+  text-align: center;
+  color: #64748b;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.login-form span:hover {
+  color: #2563eb;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .login-card {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .login-logo {
+    text-align: center;
+    padding: 40px 25px;
+  }
+
+  .login-logo h2 {
+    font-size: 34px;
+  }
+
+  .login-form {
+    padding: 35px 25px;
+  }
+}

@@ -1,0 +1,181 @@
+/* Import Font */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+/* ===== SIDEBAR ===== */
+.sidebar {
+  width: 270px;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #0ea5e9, #2563eb, #1d4ed8);
+  padding: 24px 18px;
+  font-family: "Poppins", sans-serif;
+  box-shadow: 10px 0 35px rgba(37, 99, 235, 0.15);
+  position: sticky;
+  top: 0;
+  left: 0;
+}
+
+/* ===== LOGO ===== */
+.sidebar-logo {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 38px;
+  padding: 10px;
+}
+
+.profil {
+  width: 52px;
+  height: 52px;
+  border-radius: 18px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.15);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(8px);
+}
+
+.profil img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.teks {
+  color: white;
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+/* ===== MENU ===== */
+.sidebar-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* ===== MENU ITEM ===== */
+.menu-item,
+.menu-item-active {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 18px;
+  border-radius: 18px;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.35s ease;
+}
+
+/* Default */
+.menu-item {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Icon */
+.menu-item svg,
+.menu-item-active svg {
+  font-size: 18px;
+  transition: all 0.35s ease;
+}
+
+/* ===== HOVER AESTHETIC ===== */
+.menu-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -130%;
+  width: 70%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.35),
+    transparent
+  );
+  transition: 0.7s ease;
+}
+
+.menu-item:hover::before {
+  left: 130%;
+}
+
+.menu-item:hover {
+  background: rgba(255, 255, 255, 0.16);
+  color: white;
+  transform: translateX(6px) scale(1.02);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.12);
+  backdrop-filter: blur(10px);
+}
+
+.menu-item:hover svg {
+  transform: scale(1.18) rotate(-8deg);
+}
+
+/* ===== ACTIVE ===== */
+.menu-item-active {
+  background: white;
+  color: #2563eb;
+  font-weight: 700;
+  box-shadow: 0 12px 25px rgba(0,0,0,0.12);
+}
+
+.menu-item-active svg {
+  color: #2563eb;
+}
+
+/* ===== RESPONSIVE TABLET ===== */
+@media (max-width: 900px) {
+  .sidebar {
+    width: 90px;
+    padding: 20px 12px;
+  }
+
+  .sidebar-logo {
+    justify-content: center;
+    margin-bottom: 28px;
+  }
+
+  .teks {
+    display: none;
+  }
+
+  .menu-item,
+  .menu-item-active {
+    justify-content: center;
+    padding: 14px;
+  }
+
+  .menu-item span,
+  .menu-item-active span {
+    display: none;
+  }
+
+  .menu-item svg,
+  .menu-item-active svg {
+    font-size: 20px;
+  }
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 600px) {
+  .sidebar {
+    width: 72px;
+    padding: 18px 10px;
+  }
+
+  .profil {
+    width: 42px;
+    height: 42px;
+  }
+
+  .menu-item,
+  .menu-item-active {
+    padding: 12px;
+    border-radius: 14px;
+  }
+}

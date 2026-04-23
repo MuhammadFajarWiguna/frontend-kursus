@@ -1,0 +1,9 @@
+:root {
+  --primary: #4f46e5;    /* Indigo utama */
+  --primary-hover: #4338ca;
+  --bg-dark: #0f172a;    /* Slate gelap untuk sidebar */
+  --bg-light: #f8fafc;   /* Background dashboard */
+  --text-main: #1e293b;
+  --text-muted: #64748b;
+  --sidebar-width: 260px;
+}
