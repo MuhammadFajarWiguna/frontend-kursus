@@ -3,13 +3,17 @@ import { useNavigate } from "react-router-dom";
 import axiosInstance from "../../utils/AxiosIntance";
 import CourseImg from "../../assets/kursus.png";
 import MyNavbar from "../../components/MyNavbar/MyNavbar";
-import Swal from "sweetalert2"; // Import SweetAlert2
+import Swal from "sweetalert2";
 import "./Landing.css";
+import { useDashboard } from "../../context/DashboardContext";
 
 const Landing = () => {
   const navigate = useNavigate();
   const [courses, setCourses] = useState([]);
   const [loading, setLoading] = useState(true);
+
+  // Mengambil state 'search' dari context
+  const { search } = useDashboard();
 
   const getCourses = async () => {
     try {
@@ -55,6 +59,11 @@ const Landing = () => {
       });
     }
   };
+
+  // LOGIKA FILTER: Menyaring kursus berdasarkan input search
+  const filteredKursus = courses.filter((item) => {
+    return item.nama_kursus.toLowerCase().includes(search.toLowerCase());
+  });
 
   useEffect(() => {
     getCourses();
@@ -119,8 +128,8 @@ const Landing = () => {
               <div style={{ textAlign: "center", gridColumn: "1 / -1", padding: "50px" }}>
                 <p>Sedang memuat data kursus terbaik...</p>
               </div>
-            ) : courses.length > 0 ? (
-              courses.map((item) => (
+            ) : filteredKursus.length > 0 ? ( // Menggunakan data hasil filter
+              filteredKursus.map((item) => (
                 <div
                   key={item.id}
                   className="card-kursus"
@@ -166,7 +175,11 @@ const Landing = () => {
                 </div>
               ))
             ) : (
-              <p style={{ textAlign: "center", gridColumn: "1 / -1" }}>Tidak ada data kursus yang tersedia.</p>
+              // Tampilan jika hasil pencarian tidak ditemukan
+              <div style={{ textAlign: "center", gridColumn: "1 / -1", padding: "50px" }}>
+                <h3>Maaf, kursus "{search}" tidak ditemukan.</h3>
+                <p>Coba gunakan kata kunci lain.</p>
+              </div>
             )}
           </div>
         </section>
