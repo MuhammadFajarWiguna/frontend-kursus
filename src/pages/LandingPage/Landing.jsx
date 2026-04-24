@@ -12,7 +12,7 @@ const Landing = () => {
   const [courses, setCourses] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  // Mengambil state 'search' dari context
+
   const { search } = useDashboard();
 
   const getCourses = async () => {
@@ -60,7 +60,6 @@ const Landing = () => {
     }
   };
 
-  // LOGIKA FILTER: Menyaring kursus berdasarkan input search
   const filteredKursus = courses.filter((item) => {
     return item.nama_kursus.toLowerCase().includes(search.toLowerCase());
   });
@@ -74,7 +73,7 @@ const Landing = () => {
       <MyNavbar />
 
       <div className="container" style={{ padding: "40px 20px" }}>
-        {/* HERO SECTION */}
+     
         <section className="hero" style={{ display: "flex", alignItems: "center", marginBottom: "80px", gap: "40px" }}>
           <div className="hero-left" style={{ flex: 1 }}>
             <span style={{ color: "#007bff", fontWeight: "bold", textTransform: "uppercase", fontSize: "0.9rem" }}>Upgrade Your Skills</span>
@@ -107,7 +106,6 @@ const Landing = () => {
           </div>
         </section>
 
-        {/* DAFTAR KURSUS SECTION */}
         <section id="daftar-kursus" className="kursus">
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: "40px" }}>
             <div>
@@ -128,7 +126,7 @@ const Landing = () => {
               <div style={{ textAlign: "center", gridColumn: "1 / -1", padding: "50px" }}>
                 <p>Sedang memuat data kursus terbaik...</p>
               </div>
-            ) : filteredKursus.length > 0 ? ( // Menggunakan data hasil filter
+            ) : filteredKursus.length > 0 ? ( 
               filteredKursus.map((item) => (
                 <div
                   key={item.id}
@@ -175,7 +173,7 @@ const Landing = () => {
                 </div>
               ))
             ) : (
-              // Tampilan jika hasil pencarian tidak ditemukan
+     
               <div style={{ textAlign: "center", gridColumn: "1 / -1", padding: "50px" }}>
                 <h3>Maaf, kursus "{search}" tidak ditemukan.</h3>
                 <p>Coba gunakan kata kunci lain.</p>

@@ -28,7 +28,7 @@ const Kursus = () => {
     }
   };
 
-  // LOGIKA FILTER: Mencari berdasarkan nama kursus
+
   const filteredData = kursus.filter((item) => {
     return item.nama_kursus.toLowerCase().includes(search.toLowerCase());
   });

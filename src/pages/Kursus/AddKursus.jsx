@@ -45,7 +45,7 @@ const AddKursus = () => {
         },
       );
 
-      // Alert Sukses
+      
       Swal.fire({
         title: "Berhasil!",
         text: "Kursus baru telah berhasil ditambahkan.",
@@ -60,7 +60,7 @@ const AddKursus = () => {
     } catch (err) {
       console.log(err?.response);
 
-      // Alert Gagal
+  
       Swal.fire({
         title: "Gagal Menambahkan",
         text: err?.response?.data?.message || "Pastikan semua data terisi dengan benar.",

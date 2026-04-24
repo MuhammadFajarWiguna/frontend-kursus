@@ -23,7 +23,7 @@ const Mentor = () => {
       const allUser = result.data.data || [];
       const OnlyMentor = allUser.filter((user) => user.role === "mentor");
       setMentor(OnlyMentor);
-      // console.log(OnlySiswa);
+      
     } catch (error) {
       console.error("Gagal mengambil data Mentor", error);
     } finally {
@@ -31,7 +31,6 @@ const Mentor = () => {
     }
   };
 
-  // LOGIKA FILTER: Mencari berdasarkan nama kursus
   const filteredData = mentor.filter((s) => {
     return s.nama_user.toLowerCase().includes(search.toLowerCase());
   });
@@ -47,7 +46,7 @@ const Mentor = () => {
     try {
       await axiosInstance.delete(`/api/users/delete/${id}`);
       alert("Berhasil dihapus");
-      getMentor(); // Refresh data setelah hapus
+      getMentor(); 
     } catch (error) {
       console.log("Gagal hapus:", error?.response);
     }

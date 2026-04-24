@@ -31,7 +31,7 @@ const Siswa = () => {
     }
   };
 
-  // LOGIKA FILTER: Mencari berdasarkan nama kursus
+
   const filteredData = siswa.filter((s) => {
     return s.nama_user.toLowerCase().includes(search.toLowerCase());
   });
@@ -47,7 +47,7 @@ const Siswa = () => {
     try {
       await axiosInstance.delete(`/api/users/delete/${id}`);
       alert("Berhasil dihapus");
-      getSiswa(); // Refresh data setelah hapus
+      getSiswa();
     } catch (error) {
       console.log("Gagal hapus:", error?.response);
     }

@@ -64,13 +64,11 @@ const Login = () => {
   return (
     <div className="login-page">
       <div className="login-card">
-
         <div className="login-logo">
           <h2>Kursus HiFive</h2>
           <p>Tentukan Skill kamu</p>
         </div>
 
-    
         <form className="login-form" onSubmit={handleLogin}>
           <h3>Login</h3>
 
